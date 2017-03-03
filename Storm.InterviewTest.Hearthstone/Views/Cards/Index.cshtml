@@ -19,22 +19,6 @@
                 }
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="list-inline">
-                    @foreach (var card in Model.Cards)
-                    {
-                        <li class="list-group-item">
-                            <div class="col-md-12">
-                                <a href="@Url.Action("Details", "Card", new { id = card.Id })"><img class="img-responsive img-thumbnail" src="@card.ImageUrl" alt="@card.Name" title="@card.Name" /></a>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <span class="label rarity-@card.Rarity"><strong>@card.Rarity</strong></span>
-                            </div>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
+        @Html.Partial("_CardList", Model.Cards)
     </div>
 </div>
