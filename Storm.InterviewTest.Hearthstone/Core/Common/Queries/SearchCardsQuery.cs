@@ -13,12 +13,15 @@ namespace Storm.InterviewTest.Hearthstone.Core.Common.Queries
 
 		public SearchCardsQuery(string q)
 		{
-			_q = q ?? string.Empty;
+			_q = string.IsNullOrEmpty(q) ? string.Empty : q.ToLower();
 		}
 
 		protected override IEnumerable<ICard> ExecuteLinq(IQueryable<ICard> queryOver)
 		{
-			return queryOver.Where(x => x.Name.Contains(_q) || x.Type.ToString() == _q || x.PlayerClass == _q);
+            // Data returns case sensitive, convert to lowercase any value being queried, checking for nulls as ToLower() on null throws exception.
+			return queryOver.Where(x => x.Name == null ? x.Name.Contains(_q) : x.Name.ToLower().Contains(_q) 
+                || x.Type.ToString().ToLower() == _q 
+                || (x.PlayerClass == null ? x.PlayerClass : x.PlayerClass.ToLower()) == _q);
 		}
 	}
 }
