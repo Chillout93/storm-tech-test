@@ -15,7 +15,7 @@ namespace Storm.InterviewTest.Hearthstone.Tests.Mapping
 		{
 			_card = new HeroCard("M1")
 			{
-				PlayerClass = "Priest",
+				PlayerClass = PlayerClass.Priest,
 				Name = "Anduin",
 				Faction = FactionTypeOptions.Neutral,
 				Rarity = RarityTypeOptions.Legendary,

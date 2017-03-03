@@ -10,7 +10,7 @@ using Storm.InterviewTest.Hearthstone.Core.Features.Cards.Models;
 namespace Storm.InterviewTest.Hearthstone.Tests.Queries
 {
     [Category("Cache")]
-    public class WhenSearchingHearthstoneCardsWithLowerCaseTerm : HearthstoneCardCacheContext
+    public class WhenSearchingHearthstoneCardsWithPlayerClassFilter : HearthstoneCardCacheContext
     {
         protected IEnumerable<ICard> _result;
         protected SearchModel query;
@@ -21,10 +21,10 @@ namespace Storm.InterviewTest.Hearthstone.Tests.Queries
             {
                 CreateRandomMinionCardWithId("99", minion =>
                 {
-                    minion.Name = "acidic swamp ooze";
+                    minion.Name = "my special card";
                     minion.Faction = FactionTypeOptions.Alliance;
-                    minion.PlayerClass = PlayerClass.Mage;
                     minion.Rarity = RarityTypeOptions.Legendary;
+                    minion.PlayerClass = PlayerClass.NoClass;
                 })
             };
         }
@@ -33,8 +33,8 @@ namespace Storm.InterviewTest.Hearthstone.Tests.Queries
         {
             query = new SearchModel()
             {
-                SelectedPlayerClass = PlayerClass.Mage,
-                Query = "Acidic"
+                Query = "special",
+                SelectedPlayerClass = PlayerClass.NoClass
             };
         }
 
@@ -47,8 +47,7 @@ namespace Storm.InterviewTest.Hearthstone.Tests.Queries
         public void ShouldReturnExpectedSearchResults()
         {
             _result.Count().ShouldEqual(1);
-            _result.First().Name.ShouldEqual("acidic swamp ooze");
-            _result.First().PlayerClass.ShouldEqual(PlayerClass.Mage);
+            _result.First().Name.ShouldEqual("my special card");
         }
     }
 }

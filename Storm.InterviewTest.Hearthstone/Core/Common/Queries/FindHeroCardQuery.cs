@@ -6,9 +6,9 @@ namespace Storm.InterviewTest.Hearthstone.Core.Common.Queries
 {
 	public class FindHeroCardQuery : SingleCardLinqQueryObject<HeroCard>
 	{
-		private readonly string _playerClass;
+		private readonly PlayerClass _playerClass;
 
-		public FindHeroCardQuery(string playerClass)
+		public FindHeroCardQuery(PlayerClass playerClass)
 		{
 			_playerClass = playerClass;
 		}

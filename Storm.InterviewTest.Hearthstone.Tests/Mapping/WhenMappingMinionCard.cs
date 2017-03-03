@@ -16,7 +16,7 @@ namespace Storm.InterviewTest.Hearthstone.Tests.Mapping
 		{
 			_card = new MinionCard("M1")
 			{
-				PlayerClass = "Warrior",
+				PlayerClass = PlayerClass.Warrior,
 				Name = "Whirlwind",
 				Faction = FactionTypeOptions.Alliance,
 				Rarity = RarityTypeOptions.Legendary,

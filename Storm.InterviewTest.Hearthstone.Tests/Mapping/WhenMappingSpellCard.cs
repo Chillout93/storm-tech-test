@@ -15,7 +15,7 @@ namespace Storm.InterviewTest.Hearthstone.Tests.Mapping
 		{
 			_card = new SpellCard("M1")
 			{
-				PlayerClass = "Mage",
+				PlayerClass = PlayerClass.Mage,
 				Name = "Fireball",
 				Faction = FactionTypeOptions.Neutral,
 				Rarity = RarityTypeOptions.Common,

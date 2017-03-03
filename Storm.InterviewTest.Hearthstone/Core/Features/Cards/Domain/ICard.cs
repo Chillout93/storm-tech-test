@@ -9,7 +9,7 @@ namespace Storm.InterviewTest.Hearthstone.Core.Features.Cards.Domain
 		CardTypeOptions Type { get; }
 		int Cost { get; set; }
 		int Attack { get; set; }
-		string PlayerClass { get; set; }
+		PlayerClass PlayerClass { get; set; }
 		Uri ImageUrl { get; }
 	}
 }
