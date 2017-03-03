@@ -28,6 +28,9 @@
                             <div class="col-md-12">
                                 <a href="@Url.Action("Details", "Card", new { id = card.Id })"><img class="img-responsive img-thumbnail" src="@card.ImageUrl" alt="@card.Name" title="@card.Name" /></a>
                             </div>
+                            <div class="col-md-12 text-center">
+                                <span class="label rarity-@card.Rarity"><strong>@card.Rarity</strong></span>
+                            </div>
                         </li>
                     }
                 </ul>

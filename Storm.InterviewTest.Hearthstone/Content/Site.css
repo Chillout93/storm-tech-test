@@ -22,3 +22,23 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.rarity-Free {
+    color: silver;
+}
+
+.rarity-Common {
+    color: slategrey;
+}
+
+.rarity-Rare {
+    color: blue;
+}
+
+.rarity-Epic {
+    color: blueviolet;
+}
+
+.rarity-Legendary {
+    color: coral;
+}
