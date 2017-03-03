@@ -126,6 +126,7 @@
     <Compile Include="Core\Common\Queries\FindHeroCardQuery.cs" />
     <Compile Include="Core\Common\Queries\FindPlayableHeroCardsQuery.cs" />
     <Compile Include="Core\Features\Cards\Domain\PlayerClass.cs" />
+    <Compile Include="Core\Features\Cards\IMediaService.cs" />
     <Compile Include="Core\Features\Cards\Models\HeroModel.cs" />
     <Compile Include="Core\Features\Cards\Models\MinionModel.cs" />
     <Compile Include="Core\Features\Cards\Models\SearchModel.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Core\Features\Cards\IHearthstoneCardParser.cs" />
     <Compile Include="Core\Features\Cards\IHearthstoneCardCacheFactory.cs" />
     <Compile Include="Core\Features\Cards\Services\LocalJsonFeedHearthstoneCardCacheFactory.cs" />
+    <Compile Include="Core\Features\Cards\Services\MediaService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
