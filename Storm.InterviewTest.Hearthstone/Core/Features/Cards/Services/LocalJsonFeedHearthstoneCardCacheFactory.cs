@@ -3,14 +3,10 @@ using System.IO;
 using System.Web;
 using Newtonsoft.Json.Linq;
 using Storm.InterviewTest.Hearthstone.Core.Features.Cards.Domain;
-using System.Linq;
-using Newtonsoft.Json;
-using System.Reflection;
-using System;
 
 namespace Storm.InterviewTest.Hearthstone.Core.Features.Cards.Services
 {
-	public class LocalJsonFeedHearthstoneCardCacheFactory : HearthstoneCardCacheFactory
+    public class LocalJsonFeedHearthstoneCardCacheFactory : HearthstoneCardCacheFactory
 	{
 		public LocalJsonFeedHearthstoneCardCacheFactory(IHearthstoneCardParser parser) : base(parser)
 		{
