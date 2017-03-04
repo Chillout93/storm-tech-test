@@ -27,12 +27,18 @@ namespace Storm.InterviewTest.Hearthstone.Core.Features.Cards.Services
 		{
 			var cards = _cardCache.Query(new SearchCardsQuery(model));
 
-            return new SearchModel()
+            var searchModel = new SearchModel()
             {
-                Cards = Mapper.Map<IEnumerable<ICard>, IEnumerable<CardModel>>(cards),
+                CardCount = cards.Count(),
+                TotalPages = cards.Count() / model.PageSize,
+                Page = model.Page,
+                PageSize = model.PageSize,
+                Cards = Mapper.Map<IEnumerable<ICard>, IEnumerable<CardModel>>(cards.Skip(model.PageSize * model.Page).Take(model.PageSize)),
                 SelectedPlayerClass = model.SelectedPlayerClass,
                 Query = model.Query
             };
+
+            return searchModel;
 		}
 
 		public IEnumerable<CardModel> GetHeroes()

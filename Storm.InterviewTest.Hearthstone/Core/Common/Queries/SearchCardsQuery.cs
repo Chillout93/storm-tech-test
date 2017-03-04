@@ -18,9 +18,9 @@ namespace Storm.InterviewTest.Hearthstone.Core.Common.Queries
 		}
 
 		protected override IEnumerable<ICard> ExecuteLinq(IQueryable<ICard> queryOver)
-		{
+        {
             // Data returns case sensitive, convert to lowercase any value being queried, checking for nulls as ToLower() on null throws exception.
-			return queryOver.Where(x => (x.Name == null ? x.Name.Contains(model.Query) : x.Name.ToLower().Contains(model.Query) 
+            return queryOver.Where(x => (x.Name == null ? x.Name.Contains(model.Query) : x.Name.ToLower().Contains(model.Query)
                 || x.Type.ToString().ToLower() == model.Query)
                 && (x.PlayerClass == model.SelectedPlayerClass || !model.SelectedPlayerClass.HasValue));
 		}
